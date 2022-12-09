@@ -1,0 +1,22 @@
+
+
+.content{
+  width: 90%;
+  margin: auto;
+}
+
+.button-demo{
+  width: 90%;
+  margin: auto;
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  padding: 10px 60px;
+  border-radius: 5px;
+  margin: 10px 0px;
+  margin-left: 5%;
+  
+  cursor: pointer;
+
+
+}

@@ -1,0 +1,13 @@
+{
+    "Servers": {
+        "logistics": {
+            "Name": "diszinventory",
+            "Group": "Servers",
+            "Port": 5432,
+            "Username": "diszinventory",
+            "Host": "diszinventory_postgres",
+            "SSLMode": "prefer",
+            "MaintenanceDB": "postgres"
+        }
+    }
+}

@@ -1,0 +1,47 @@
+services:
+  postgres:
+    container_name: diszinventory_postgres
+    image: postgres  
+    restart: always
+    ports:
+      - 0.0.0.0:5432:5432
+    networks:
+      - network
+    environment:
+      - POSTGRES_DB=diszinventory
+      - POSTGRES_USER=diszinventory
+      - POSTGRES_PASSWORD=diszinventory
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  pgadmin:
+    container_name: diszinventory_pgadmin4
+    image: dpage/pgadmin4
+    restart: always
+    ports:
+      - 0.0.0.0:7000:80
+    networks:
+      - network
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=info@bitotron.com
+      - PGADMIN_DEFAULT_PASSWORD=pass
+      - PGADMIN_DISABLE_POSTFIX=true
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    configs:
+      - source: pgadmin_servers
+        target: /pgadmin4/servers.json
+
+networks:
+  network:
+    name: diszinventory_network
+
+volumes:
+  postgres_data:
+    name: diszinventory_postgres_data
+  pgadmin_data:
+    name: diszinventory_pgadmin_data
+
+configs:
+  pgadmin_servers:
+    file: ./servers.json
