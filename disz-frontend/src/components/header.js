@@ -14,6 +14,13 @@ const Header = (props) => {
     return (
         <nav className="navbar navbar-expand navbar-dark bg-dark">
             <ul className="navbar-nav mr-auto">
+
+                <li>space</li>
+                <li> 
+                <Button label="DISz - Library"  />
+                </li>
+                <li>space</li>
+                
                 <li className="nav-item"> 
                 <Link to='/' className="nav-link"> Home </Link>
                 </li>
@@ -62,7 +69,7 @@ const Header = (props) => {
                 {user && <li>
                     <Button
                     label="Sign Out"
-                    onClick={(e)=>{handleLogOut(e);navigate('/', {replace: true}); console.log("valami itt is"); window.location.reload();}}
+                    onClick={(e)=>{handleLogOut(e);navigate('/', {replace: true}); window.location.reload();}}
                     />
                 </li>}
                  
