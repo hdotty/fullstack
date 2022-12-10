@@ -1,4 +1,4 @@
-import React from "react"
+import React, { Fragment } from "react"
 import {Button} from "primereact/button"
 import useBookPage from "./useBookPage"
 import AddBorrow from "../addBorrow/addBorrow"
@@ -10,7 +10,8 @@ function BookPage(props){
     const id = props.editBookId
 
     const {getLoggedInUser, user} = useGetLoggedInUser()
-    const {book, getBook, handleBorrow, borrow} = useBookPage()
+    const {book, getBook, handleBorrow, borrow, borrows} = useBookPage()
+    const b = 
     
     getLoggedInUser()
     getBook(id)
@@ -41,22 +42,7 @@ function BookPage(props){
                     {user!==undefined && user.admin && <Button label="Borrow It" icon="pi pi-user" className="w-full" onClick={(e)=>(handleBorrow(e))} />}
                 </div>
             </li>
-            {user!==undefined && user.admin && <li className="flex align-items-center py-3 px-2 border-top-1 border-300 flex-wrap">
-                <div className="text-500 w-6 md:w-2 font-medium">Who borrowed it?
-                    <table className="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>Who</th>
-                                <th>From</th>
-                                <th>To</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </li> }
+           
         </ul>
         }
         </div>

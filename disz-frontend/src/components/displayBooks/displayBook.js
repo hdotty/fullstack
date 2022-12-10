@@ -31,7 +31,7 @@ const Book = () => {
                 <thead>
                     <tr>
                         <th scope="col" >Author</th>
-                        <th scope="col">title</th>
+                        <th scope="col">Title</th>
                         <th></th>
                         <th></th>
                         <th></th>
