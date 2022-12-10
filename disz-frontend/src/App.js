@@ -19,6 +19,7 @@ import DisplayBorrows from "./components/displayBorrows/displayBorrows"
 import AddBorrow from "./components/addBorrow/addBorrow"
 import Book from "./components/displayBooks/displayBook"
 import MyPage from "./components/personPage/myPage"
+import Contact from "./components/contact"
 
 import {
   BrowserRouter as Router,
@@ -41,6 +42,7 @@ const App = () => {
         <Routes>
           <Route exact path='/' element={ <Home /> }/>
           <Route exact path='/components/books' element={ <Book /> }/>
+          <Route exact path='/components/contact' element={ <Contact /> } />
 
           { <Route exact path='/components/signup/signup' element={ <Signup  /> }/>}
           { <Route exact path='/components/login/login' element={ <Login /> }/>}

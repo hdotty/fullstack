@@ -50,6 +50,10 @@ const Header = (props) => {
                 <Link to='/components/displayPersons/displayPersons' className="nav-link"> Users </Link> 
                 </li>}
 
+                <li className="nav-item"> 
+                <Link to='/components/contact' className="nav-link"> Contact </Link>
+                </li>
+
                 {(user !== undefined && user.admin) && 
                 <li className="nav-item"> 
                 <Link to='/components/displayBorrows/displayBorrows' className="nav-link"> Borrows </Link> 
