@@ -11,28 +11,29 @@ const PersonPage = (props) => {
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
     const [changePsw, setChangePsw] = useState(false)
+    const [bool, setBool] = useState(true)
 
-    const {person, getPerson, handleEdit, edit, handleSave, getBorrows, borrows} = UsePerson()
+    const {person, getPerson, handleEdit, edit, handleSave, getBorrows, borrows, handleAdmin} = UsePerson()
     const {convertDatee} = convertDate()
 
-    const displayPerson = (id, bool) => {
+    const displayPerson = (id) => {
         if(bool){
             getPerson(id)
-            bool = false
-            //setDone(true)
+            setBool(false)
         }
+        
     }
 
     displayPerson(id, true)
-    getBorrows(id)
-    console.log(borrows)
+    //getBorrows(id)
+
 
     return (
         
         <div>
 
             
-                <div className="text-center mb-5">
+            <div className="text-center mb-5">
             
                 <div>
                 <div className="text-900 text-3xl font-medium mb-3">Personal Data</div>
@@ -77,8 +78,20 @@ const PersonPage = (props) => {
                             <div className="text-900 w-full md:w-8 md:flex-order-0 flex-order-1">{person.email}</div>}
                     </li>
                     <li className="flex align-items-center py-3 px-2 border-top-1 border-300 flex-wrap">
+                        <div className="text-500 w-6 md:w-2 font-medium">Admin</div>
+
+                            {person.admin ? 
+                            <div className="text-500 w-6 md:w-2 font-medium">Yes</div> :
+                            <div className="text-500 w-6 md:w-2 font-medium">No</div>
+                            }
+
+                        <div className="text-500 w-6 md:w-2 font-medium">{}</div>
+                        <Button type="button" className="p-button-text" label="Set as Admin" onClick={(e)=>handleAdmin(e, person)} />
+                    </li>
+                    <li className="flex align-items-center py-3 px-2 border-top-1 border-300 flex-wrap">
                         <div className="text-500 w-6 md:w-2 font-medium">Books</div>
                     </li>
+
                     </ul></div>
                     <div className="">
                         <table className="table lg:w-12 flex align-items-center justify-content-center w-full">

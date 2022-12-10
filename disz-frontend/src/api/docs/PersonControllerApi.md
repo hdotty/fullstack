@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**getPersonsUsingGET**](PersonControllerApi.md#getPersonsUsingGET) | **GET** /person | getPersons
 [**personsBooksUsingGET**](PersonControllerApi.md#personsBooksUsingGET) | **GET** /persons | personsBooks
 [**pswChangeUsingPUT**](PersonControllerApi.md#pswChangeUsingPUT) | **PUT** /person/{oldPassword}/{newPassword} | pswChange
+[**setAsAdminUsingPOST**](PersonControllerApi.md#setAsAdminUsingPOST) | **POST** /person/admin | setAsAdmin
 [**updatePersonUsingPUT**](PersonControllerApi.md#updatePersonUsingPUT) | **PUT** /person | updatePerson
 
 
@@ -341,6 +342,53 @@ Name | Type | Description  | Notes
  **newPassword** | **String**| newPassword | 
  **oldPassword** | **String**| oldPassword | 
  **personDto** | [**PersonDto**](PersonDto.md)| personDto | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+
+## setAsAdminUsingPOST
+
+> setAsAdminUsingPOST(personDto, opts)
+
+setAsAdmin
+
+### Example
+
+```javascript
+import ApiDocumentation from 'api_documentation';
+
+let apiInstance = new ApiDocumentation.PersonControllerApi();
+let personDto = new ApiDocumentation.PersonDto(); // PersonDto | personDto
+let opts = {
+  'admin': true // Boolean | admin
+};
+apiInstance.setAsAdminUsingPOST(personDto, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **personDto** | [**PersonDto**](PersonDto.md)| personDto | 
+ **admin** | **Boolean**| admin | [optional] 
 
 ### Return type
 

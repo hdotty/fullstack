@@ -13,6 +13,7 @@ const UsePerson = () => {
     const [saving, setSaving] = useState(true)
     const [runBorrow, setRunBorrow] = useState(true)
     const [borrows, setBorrows] = useState([])
+    const [admin, setAdmin] = useState("a")
 
     const getPerson = (id) => {
         try{
@@ -28,11 +29,15 @@ const UsePerson = () => {
                     }
                 })
             }
+
         }catch(err){
             console.log(err)
             setIsCanceled(true)
         }
-        
+
+        setIsCanceled(true)
+
+
     }    
 
     const handleEdit = (e) => {
@@ -61,6 +66,20 @@ const UsePerson = () => {
         }
     }
 
+    const handleAdmin = (e, person) => {
+        e.preventDefault()
+        var a = true
+        PersonController.setAsAdminUsingPOST(person, a, function(error) {
+            if(error !== null) {
+                console.log(error)
+            }else{
+             console.log(person)   
+            }
+        })
+        console.log(person)
+        
+    }
+
     const getBorrows = (id) => {
         if(runBorrow){
             BorrowController.findBorrowByPersonIdUsingGET(id, function(error, data){
@@ -76,7 +95,7 @@ const UsePerson = () => {
         }
     }
 
-    return {getPerson, person, handleEdit, edit, handleSave, getBorrows, borrows}
+    return {getPerson, person, handleEdit, edit, handleSave, getBorrows, borrows, handleAdmin, admin}
 }
 
 export default UsePerson

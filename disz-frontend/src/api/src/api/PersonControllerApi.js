@@ -366,6 +366,50 @@ export default class PersonControllerApi {
     }
 
     /**
+     * Callback function to receive the result of the setAsAdminUsingPOST operation.
+     * @callback module:api/PersonControllerApi~setAsAdminUsingPOSTCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * setAsAdmin
+     * @param {module:model/PersonDto} personDto personDto
+     * @param {Object} opts Optional parameters
+     * @param {Boolean} opts.admin admin
+     * @param {module:api/PersonControllerApi~setAsAdminUsingPOSTCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    setAsAdminUsingPOST(personDto, opts, callback) {
+      opts = opts || {};
+      let postBody = personDto;
+      // verify the required parameter 'personDto' is set
+      if (personDto === undefined || personDto === null) {
+        throw new Error("Missing the required parameter 'personDto' when calling setAsAdminUsingPOST");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+        'admin': opts['admin']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/person/admin', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the updatePersonUsingPUT operation.
      * @callback module:api/PersonControllerApi~updatePersonUsingPUTCallback
      * @param {String} error Error message, if any.

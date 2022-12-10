@@ -109,7 +109,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.errorHtmlUsingDELETE(callback);
+api.errorUsingDELETE(callback);
 
 ```
 
@@ -119,13 +119,13 @@ All URIs are relative to *http://localhost:8080*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*ApiDocumentation.BasicErrorControllerApi* | [**errorHtmlUsingDELETE**](docs/BasicErrorControllerApi.md#errorHtmlUsingDELETE) | **DELETE** /error | errorHtml
-*ApiDocumentation.BasicErrorControllerApi* | [**errorHtmlUsingGET**](docs/BasicErrorControllerApi.md#errorHtmlUsingGET) | **GET** /error | errorHtml
-*ApiDocumentation.BasicErrorControllerApi* | [**errorHtmlUsingHEAD**](docs/BasicErrorControllerApi.md#errorHtmlUsingHEAD) | **HEAD** /error | errorHtml
-*ApiDocumentation.BasicErrorControllerApi* | [**errorHtmlUsingOPTIONS**](docs/BasicErrorControllerApi.md#errorHtmlUsingOPTIONS) | **OPTIONS** /error | errorHtml
-*ApiDocumentation.BasicErrorControllerApi* | [**errorHtmlUsingPATCH**](docs/BasicErrorControllerApi.md#errorHtmlUsingPATCH) | **PATCH** /error | errorHtml
-*ApiDocumentation.BasicErrorControllerApi* | [**errorHtmlUsingPOST**](docs/BasicErrorControllerApi.md#errorHtmlUsingPOST) | **POST** /error | errorHtml
-*ApiDocumentation.BasicErrorControllerApi* | [**errorHtmlUsingPUT**](docs/BasicErrorControllerApi.md#errorHtmlUsingPUT) | **PUT** /error | errorHtml
+*ApiDocumentation.BasicErrorControllerApi* | [**errorUsingDELETE**](docs/BasicErrorControllerApi.md#errorUsingDELETE) | **DELETE** /error | error
+*ApiDocumentation.BasicErrorControllerApi* | [**errorUsingGET**](docs/BasicErrorControllerApi.md#errorUsingGET) | **GET** /error | error
+*ApiDocumentation.BasicErrorControllerApi* | [**errorUsingHEAD**](docs/BasicErrorControllerApi.md#errorUsingHEAD) | **HEAD** /error | error
+*ApiDocumentation.BasicErrorControllerApi* | [**errorUsingOPTIONS**](docs/BasicErrorControllerApi.md#errorUsingOPTIONS) | **OPTIONS** /error | error
+*ApiDocumentation.BasicErrorControllerApi* | [**errorUsingPATCH**](docs/BasicErrorControllerApi.md#errorUsingPATCH) | **PATCH** /error | error
+*ApiDocumentation.BasicErrorControllerApi* | [**errorUsingPOST**](docs/BasicErrorControllerApi.md#errorUsingPOST) | **POST** /error | error
+*ApiDocumentation.BasicErrorControllerApi* | [**errorUsingPUT**](docs/BasicErrorControllerApi.md#errorUsingPUT) | **PUT** /error | error
 *ApiDocumentation.BookControllerApi* | [**addBookUsingPOST**](docs/BookControllerApi.md#addBookUsingPOST) | **POST** /books | addBook
 *ApiDocumentation.BookControllerApi* | [**deleteBookUsingDELETE**](docs/BookControllerApi.md#deleteBookUsingDELETE) | **DELETE** /books/{id} | deleteBook
 *ApiDocumentation.BookControllerApi* | [**findBooksByCategoryUsingGET**](docs/BookControllerApi.md#findBooksByCategoryUsingGET) | **GET** /books/category | findBooksByCategory
@@ -156,6 +156,7 @@ Class | Method | HTTP request | Description
 *ApiDocumentation.PersonControllerApi* | [**getPersonsUsingGET**](docs/PersonControllerApi.md#getPersonsUsingGET) | **GET** /person | getPersons
 *ApiDocumentation.PersonControllerApi* | [**personsBooksUsingGET**](docs/PersonControllerApi.md#personsBooksUsingGET) | **GET** /persons | personsBooks
 *ApiDocumentation.PersonControllerApi* | [**pswChangeUsingPUT**](docs/PersonControllerApi.md#pswChangeUsingPUT) | **PUT** /person/{oldPassword}/{newPassword} | pswChange
+*ApiDocumentation.PersonControllerApi* | [**setAsAdminUsingPOST**](docs/PersonControllerApi.md#setAsAdminUsingPOST) | **POST** /person/admin | setAsAdmin
 *ApiDocumentation.PersonControllerApi* | [**updatePersonUsingPUT**](docs/PersonControllerApi.md#updatePersonUsingPUT) | **PUT** /person | updatePerson
 
 
